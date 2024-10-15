@@ -10,23 +10,24 @@ Clientes
             <div class="card-header fs-5 text-center text-primary">
                 Registro de Clientes
             </div>
-            <form action="">
+            <form action="{{route("procesarCliente")}}" method="POST">
+                @csrf
                 <div class="card-body text-justify">
                     <div class="mb-3">
                        <label for="nombre" class="form-label">Nombre:</label>
-                       <input type="text" class="form-control" id="nombre">
+                       <input type="text" class="form-control" name="nombre">
                     </div>
                     <div class="mb-3">
                        <label for="apellido" class="form-label">Apellido:</label>
-                       <input type="text" class="form-control" id="apellido">
+                       <input type="text" class="form-control" name="apellido">
                     </div>
                     <div class="mb-3">
                        <label for="email" class="form-label">Correo electrónico:</label>
-                       <input type="email" class="form-control" id="email">
+                       <input type="email" class="form-control" name="email">
                     </div>
                     <div class="mb-3">
                        <label for="telefono" class="form-label">Teléfono:</label>
-                       <input type="number" class="form-control" id="telefono">
+                       <input type="number" class="form-control" name="telefono">
                     </div>
                 </div>
                 <div class="card-footer text-muted">
