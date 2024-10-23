@@ -16,10 +16,16 @@ class ControladorVistas extends Controller
         return view('clientes');
     }
     public function procesarCliente(Request $peticion) {
-        //return "La información del cliente llego al controlador";
-        //return $peticion->all();
-        //return $peticion->path();
-        //return $peticion->url();
-        return $peticion->ip();
+        $validated = $peticion->validate([
+            'nombre'=>'required|min:3|max:255',
+            'apellido'=>'required|min:3|max:255',
+            'email'=>'required|email:rfc,dns',
+            'telefono'=>'required|numeric'
+        ]);
+        //redirección con valores en sesion
+        $usuario= $peticion->input('nombre');
+
+        session()->flash('exito', 'Se guardo el usuario '.$usuario);
+        return to_route('rutaForm');
     }
 }
