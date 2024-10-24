@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     @vite(['resources/js/app.js'])
     <title>@yield('titulo')</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
