@@ -24,8 +24,6 @@ use App\Http\Controllers\clienteController;
 
 Route::get('/', [ControladorVistas::class, 'home'])->name('rutaInicio');
 
-Route::get('/clients', [ControladorVistas::class, 'consulta'])->name('rutaClientes');
-
 #Ruta tipo view
 /* Route::view('/', 'inicio')->name('rutaInicio');
 
@@ -40,3 +38,5 @@ Route::view('/componentes', 'componentes')->name('rutaComponentes');
 Route::get('/client/create', [clienteController::class, 'create'])->name('rutaForm');
 
 Route::post('/client', [clienteController::class, 'store'])->name('procesarCliente');
+
+Route::get('/clients', [clienteController::class, 'index'])->name('rutaClientes');
