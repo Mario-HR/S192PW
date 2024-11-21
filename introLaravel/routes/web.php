@@ -35,8 +35,14 @@ Route::view('/componentes', 'componentes')->name('rutaComponentes');
 
 # Controlador cliente
 
-Route::get('/client/create', [clienteController::class, 'create'])->name('rutaForm');
+Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaForm');
 
-Route::post('/client', [clienteController::class, 'store'])->name('procesarCliente');
+Route::get('/cliente/edit/{id}', [clienteController::class, 'edit'])->name('rutaEdit');
 
-Route::get('/clients', [clienteController::class, 'index'])->name('rutaClientes');
+Route::post('/cliente', [clienteController::class, 'store'])->name('procesarCliente');
+
+Route::put('/cliente/update/{id}', [clienteController::class, 'update'])->name('actualizarCliente');
+
+Route::delete('/cliente/delete/{id}', [clienteController::class, 'destroy'])->name('eliminarCliente');
+
+Route::get('/clientes', [clienteController::class, 'index'])->name('rutaClientes');

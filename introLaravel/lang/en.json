@@ -225,5 +225,6 @@
     "Teléfono": "Password",
     "Guardar cliente": "Save customer",
     "Registro de clientes": "Customer registration",
-    "Consultar clientes": "Consult customers"
+    "Consultar clientes": "Consult customers",
+    "Actualizar cliente": "Update customer"
 }
